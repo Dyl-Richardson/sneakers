@@ -1,26 +1,32 @@
-<<<<<<< HEAD
 create = () => {
     let main = document.createElement('main');
     let div = document.createElement('div');
     let section = document.createElement('section');
+    section.className = 'details';
+    let imgSection = document.createElement('section');
+    imgSection.className = 'imgSection';
 
     for (const elt of sneaker) {
 
-        let imgSection = document.createElement('section');
-        
-        for (let pic = 0; pic < elt.picture.length; pic++) {     
+        let big = document.createElement('section');
+        big.className = 'photo';
+        let small = document.createElement('section');
+        small.className = 'thumbs';
+
+        for (let pic = 0; pic < elt.picture.length; pic++) {
             let image = document.createElement('img');
             image.src = elt.picture[pic];
-            imgSection.appendChild(image);
+            big.appendChild(image);
+            imgSection.appendChild(big);
         }
-    
 
-        for (let thumb = 0; thumb < elt.thumbnail.length; thumb++) {   
+
+        for (let thumb = 0; thumb < elt.thumbnail.length; thumb++) {
             let thumbnail = document.createElement('img');
             thumbnail.src = elt.thumbnail[thumb];
-            imgSection.appendChild(thumbnail);
+            small.appendChild(thumbnail);
+            imgSection.appendChild(small);
         }
-        section.appendChild(imgSection);
 
         let mark = document.createElement('p');
         mark.innerText = elt.mark;
@@ -38,56 +44,54 @@ create = () => {
         price.innerText = elt.price;
 
     }
+    div.appendChild(imgSection);
     div.appendChild(section);
     main.appendChild(div);
-    console.log(main);
     document.body.appendChild(main);
 }
-create ();
-=======
+create();
 // return home button
 
 let retrunButton = document.querySelector(".return")
 
-window.onscroll = function() {scrollFunction()};
+window.onscroll = function() { scrollFunction() };
 
 function scrollFunction() {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-      retrunButton.style.display = "block";
+        retrunButton.style.display = "block";
     } else {
-      retrunButton.style.display = "none";
+        retrunButton.style.display = "none";
     }
-  }
+}
 
-  function topFunction() {
+function topFunction() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
-  } 
+}
 
-  retrunButton.addEventListener("click", e => {
-      topFunction()
-  })
+retrunButton.addEventListener("click", e => {
+    topFunction()
+})
 
 // Avatar menu
 function show() {
     document.querySelector(".dropdownList").classList.toggle("show");
-  }
-  
+}
+
 window.onclick = function(event) {
     if (!event.target.matches('.avatar')) {
         let dropdowns = document.getElementsByClassName("dropdownList");
         let i;
         for (i = 0; i < dropdowns.length; i++) {
-        let openDropdown = dropdowns[i];
-        if (openDropdown.classList.contains('show')) {
-          openDropdown.classList.remove('show');
-        }
+            let openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
         }
     }
-} 
+}
 
-  let avatar = document.querySelector(".avatar")
-  avatar.addEventListener("click", e => {
-      show()
-  })
->>>>>>> d7932d542922a030f2924fd3a76e028d381307ec
+let avatar = document.querySelector(".avatar")
+avatar.addEventListener("click", e => {
+    show()
+})
