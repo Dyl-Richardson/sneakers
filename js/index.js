@@ -1,72 +1,76 @@
-<<<<<<< HEAD
 create = () => {
-    let main = document.createElement('main');
-    let div = document.createElement('div');
-    let section = document.createElement('section');
-
+    let main = document.querySelector("main")
     for (const elt of sneaker) {
 
         let imgSection = document.createElement('section');
+            imgSection.className = "product"
         
-        for (let pic = 0; pic < elt.picture.length; pic++) {     
             let image = document.createElement('img');
-            image.src = elt.picture[pic];
+            image.src = elt.picture[0];
+            image.className = "collImg"
             imgSection.appendChild(image);
-        }
-    
-
+     
+        let thumbGroup = document.createElement("p")
+        thumbGroup.className = "thumbGroup"
         for (let thumb = 0; thumb < elt.thumbnail.length; thumb++) {   
             let thumbnail = document.createElement('img');
             thumbnail.src = elt.thumbnail[thumb];
-            imgSection.appendChild(thumbnail);
+            thumbnail.className = "thumb"
+            thumbGroup.appendChild(thumbnail);
         }
-        section.appendChild(imgSection);
+        imgSection.appendChild(thumbGroup)
+        main.appendChild(imgSection);
 
-        let mark = document.createElement('p');
+        let textSection = document.createElement("section")
+        textSection.className = "product"
+
+        let mark = document.createElement('h4');
         mark.innerText = elt.mark;
-        section.appendChild(mark);
+        textSection.appendChild(mark);
 
-        let name = document.createElement('p');
+        let name = document.createElement('h5');
         name.innerText = elt.name;
-        section.appendChild(name);
+        textSection.appendChild(name);
 
         let description = document.createElement('p');
         description.innerText = elt.description;
-        section.appendChild(description);
+        textSection.appendChild(description);
 
-        let price = document.createElement('p');
-        price.innerText = elt.price;
+        let price = document.createElement('h6');
+        price.innerText = "$" + elt.price + ".00";
+        textSection.appendChild(price)
 
+        let div = document.createElement("div")
+        let minus = document.createElement("button")
+        minus.className = "minus"
+        minus.innerText = "-"
+        div.appendChild(minus)
+
+        let input = document.createElement("input")
+        input.type = "number"
+        input.value = 0
+        div.appendChild(input)
+
+        let plus = document.createElement("button")
+        plus.className = "plus"
+        plus.innerText = "+"
+        div.appendChild(plus)
+
+        let cartButton = document.createElement("button")
+        cartButton.className ="prodCart"
+        let cartImg = document.createElement("img")
+        cartImg.src = "./images/icon-cart.svg"
+        cartImg.className = "prodCartImg"
+        cartButton.innerHTML =
+        cartButton.innerText = '<img src="./images/icon-cart.svg" alt="" class="prodCartImg">' + "Add to cart"
+        div.appendChild(cartButton)
+        textSection.appendChild(div)
+
+        main.appendChild(textSection)
     }
-    div.appendChild(section);
-    main.appendChild(div);
-    console.log(main);
-    document.body.appendChild(main);
 }
 create ();
-=======
-// return home button
 
-let retrunButton = document.querySelector(".return")
-
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-      retrunButton.style.display = "block";
-    } else {
-      retrunButton.style.display = "none";
-    }
-  }
-
-  function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-  } 
-
-  retrunButton.addEventListener("click", e => {
-      topFunction()
-  })
 
 // Avatar menu
 function show() {
@@ -90,4 +94,3 @@ window.onclick = function(event) {
   avatar.addEventListener("click", e => {
       show()
   })
->>>>>>> d7932d542922a030f2924fd3a76e028d381307ec
