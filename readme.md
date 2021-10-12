@@ -1,9 +1,8 @@
-## Todo list 
+## Todo list
 
-- Crée la carte du produit
-- Click thumbnail qui change d'image
-- Crée un panier fonctionnel
-
-
-- tri par genre
-- crée le text / lien dans about 
+- Ajout panier par rapport au nombre d'item selectionner
+- ajouter promotion
+- moins d'espace entre le text a droite
+- thumbnail highlight
+- parcel?
+- mise en page du readme

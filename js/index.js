@@ -49,6 +49,7 @@ create = () => {
         let input = document.createElement("input")
         input.type = "number"
         input.value = 0
+        input.min = 0
         div.appendChild(input)
 
         let plus = document.createElement("button")
@@ -71,9 +72,8 @@ create = () => {
 }
 create ();
 
-
 // Avatar menu
-function show() {
+function showAvatar() {
     document.querySelector(".dropdownList").classList.toggle("show");
   }
   
@@ -92,5 +92,92 @@ window.onclick = function(event) {
 
   let avatar = document.querySelector(".avatar")
   avatar.addEventListener("click", e => {
-      show()
+      showAvatar()
   })
+
+// Thumbnail
+let thumbnail = document.getElementsByClassName("thumb")
+
+for (let i = 0; i < thumbnail.length; i++) {
+    thumbnail[i].addEventListener("click" , e => {
+        // thumbnail[i].style.borderStyle = "solid"
+        // thumbnail[i].style.borderColor = "orange"
+        // thumbnail[i].style.opacity = "75%"
+        let image = document.querySelector(".collImg")
+        image.src = "./images/image-product-" + [i] + ".jpg"
+    })
+}
+
+// Quantity
+let minus = document.querySelector(".minus")
+minus.addEventListener("click", e => {
+    let input = document.querySelector("input")
+    let value = document.querySelector("input").value
+        if (value > 0) {
+        input.value = value - 1
+        }
+})
+
+let plus = document.querySelector(".plus")
+plus.addEventListener("click", e => {
+    let input = document.querySelector("input")
+    let value = document.querySelector("input").value
+    let u = 1
+    input.value = value +++ 1
+})
+
+// Panier
+function showPanier() {
+    document.querySelector(".cartList").classList.toggle("show");
+  }
+  
+window.onclick = function(event) {
+    if (!event.target.matches('.cart')) {
+        let dropdowns = document.getElementsByClassName("cartList");
+        let i;
+        for (i = 0; i < dropdowns.length; i++) {
+        let openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+        }
+    }
+} 
+
+  let cart = document.querySelector(".cart")
+  cart.addEventListener("click", e => {
+      showPanier()
+  })
+
+// Add to panier
+let totalCart = 0
+
+let prodCart = document.querySelector(".prodCart")
+let panier = document.querySelector(".itemList")
+
+prodCart.addEventListener("click", e => {
+   let item = document.createElement("p")
+   prodCart.appendChild(item)
+   item.innerText = sneaker[0].name + " " + ": " + "$" + sneaker[0].price
+   totalCart = totalCart + sneaker[0].price
+   let total = document.querySelector(".totalCart")
+   total.innerText = "Total : " + "$" + totalCart 
+   panier.appendChild(item)
+})
+
+// Panier clear button 
+let clearButton = document.querySelector(".clear")
+
+clearButton.addEventListener("click", e => {
+    panier.innerText = ""
+    let total = document.querySelector(".totalCart")
+    totalCart = 0
+    total.innerText = "Total : $" + totalCart
+})
+
+// Order button
+let orderButton = document.querySelector(".order")
+
+orderButton.addEventListener("click", e => {
+    alert("Thank you for your order")
+})
