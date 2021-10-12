@@ -85,6 +85,39 @@ hr {
   display: block;
 }
 
+/* Panier */
+.panier {
+  display: inline-block;
+  position: relative;
+}
+
+.cartList {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 5vw;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  right: 0;
+  text-align: left;
+  width: 15vw;
+}
+
+.show {
+  display: block;
+}
+
+.clear,
+.order {
+  width: 49%;
+}
+
+.cartList > h1,
+.itemList,
+.totalCart {
+  padding-left: 5%;
+}
+
 /* Main */
 main {
   display: flex;
@@ -113,6 +146,7 @@ main {
   width: 6vw;
   border-radius: 10%;
   margin-right: 2%;
+  cursor: pointer;
 }
 
 h4 {
