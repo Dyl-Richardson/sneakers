@@ -1,8 +1,24 @@
-## Todo list
+## Description
 
-- Ajout panier par rapport au nombre d'item selectionner
-- ajouter promotion
-- moins d'espace entre le text a droite
-- thumbnail highlight
-- parcel?
-- mise en page du readme
+Création d'un site de vente de chaussure selon un modèle: 
+- HTML
+- CSS
+- JS
+
+## Lien
+
+[Github page](https://dyl-richardson.github.io/sneakers/)
+
+## Rendu
+
+![Rendu](images/rendu.png)
+
+## Perf lighthouse
+
+![Perf](images/perf.png)
+
+## Credit 
+
+- [Léon](https://github.com/FASH-hub)
+- [Dylan](https://github.com/Dyl-Richardson)
+
