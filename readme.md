@@ -1,7 +1,6 @@
 ## Todo list
 
 - Ajout panier par rapport au nombre d'item selectionner
-- ajouter promotion
 - moins d'espace entre le text a droite
 - thumbnail highlight
 - parcel?
