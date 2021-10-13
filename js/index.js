@@ -100,9 +100,9 @@ let thumbnail = document.getElementsByClassName("thumb")
 
 for (let i = 0; i < thumbnail.length; i++) {
     thumbnail[i].addEventListener("click" , e => {
-        // thumbnail[i].style.borderStyle = "solid"
-        // thumbnail[i].style.borderColor = "orange"
-        // thumbnail[i].style.opacity = "75%"
+        thumbnail[i].style.borderStyle = "solid"
+        thumbnail[i].style.borderColor = "orange"
+        thumbnail[i].style.opacity = "75%"
         let image = document.querySelector(".collImg")
         image.src = "./images/image-product-" + [i] + ".jpg"
     })
